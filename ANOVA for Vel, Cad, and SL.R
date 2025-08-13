@@ -538,8 +538,8 @@ summary(z_sandmod)
 
 #Assess Variance Inflation Factor (should be less than 10)
 #install.packages ("car")
-car::vif(z_smpavermod)
-car::vif(z_smpavermod2)
+car::vif(z_sandmod)
+car::vif(z_sandmod2)
 
 
 ####Check the Assumptions Linearity and Homoscedasticity
@@ -672,3 +672,4 @@ lmtest::coeftest(mulchmod,hc_se)
 
 hc_se <- car::hccm (z_mulchmod)
 lmtest::coeftest(z_mulchmod,hc_se)
+
