@@ -29,7 +29,7 @@ View(Terrain_Data_FINAL12_18_24_2_)
 
 
 descriptive_stats <- read_excel("J:/Lewek Lab/Data/Terrain Gait Speed/Ben Outputs/Terrain Data_FINAL12_18_24 (2).xlsx", sheet = "Demographics", col_types = c("text",
-                                                                                                   "text", "date","text", "date", "numeric", "numeric",  "numeric", 
+                                                                                                   "text", "date","text", "date", "numeric", "numeric",  "numeric","numeric","numeric", "numeric", 
                                                                                                    "text", "text", "text", "numeric", "text", "numeric", "text", "text", "numeric"))
 
 View(descriptive_stats)
@@ -41,7 +41,8 @@ dfSummary(descriptive_stats,
           varnumbers = FALSE,
           valid.col = FALSE,
           graph.col = FALSE,
-          tmp.img.dir = "/tmp")
+          tmp.img.dir = "/tmp",
+          round.digits= 2)
 
 #=================Reshape the Data Columns to Long Format (Easier to Handle for ANOVA)===============================================================================================
 #========= Reshape Velocity=========
@@ -672,4 +673,5 @@ lmtest::coeftest(mulchmod,hc_se)
 
 hc_se <- car::hccm (z_mulchmod)
 lmtest::coeftest(z_mulchmod,hc_se)
+
 
